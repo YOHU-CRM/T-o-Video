@@ -246,9 +246,33 @@ export const VideoGenerator: React.FC<VideoGeneratorProps> = ({
       return null;
     }
   };
+const userPkg = getUserPackage();
 
-  const handleRunFullVideo = async () => {
-    const prompts = currentPromptText.split('\n').map(p => p.trim()).filter(p => p !== '');
+const customKey = userPkg === "free" ? userKeyInput : undefined; // userKeyInput là state ô nhập key
+
+await generateVeoVideo({
+
+  mode,
+
+  prompt,
+
+  resolution,
+
+  aspectRatio,
+
+  images,
+
+  previousVideo,
+
+  negativePrompt,
+
+  onProgress,
+
+  userPackage: userPkg,
+
+  customKey,
+
+});
     if (prompts.length === 0) { alert("Vui lòng nhập kịch bản nối mạch."); return; }
     
     setIsFullVideoRendering(true); setIsGenerating(true); isStoppingRef.current = false;
