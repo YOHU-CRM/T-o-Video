@@ -1,7 +1,8 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { VideoMode, Resolution, AspectRatio, GenerationHistory, UserProfile } from '../types';
-import { generateVeoVideo } from '../services/gemini';
+import { generateVeoVideo } from "../services/veo-client";
+import { getUserPackage } from "../services/license";
 import { 
   DIRECTOR_MODE_INSTRUCTION, 
   LINK_ANALYSIS_INSTRUCTION,
