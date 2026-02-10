@@ -11,7 +11,6 @@ interface VeoRequest {
   onProgress?: (msg: string) => void;
   userPackage: "free" | "pro1" | "pro9";  // Thêm cái này để biết gói
 }
-
 const KEY_PRO1 = import.meta.env.VITE_GOOGLE_KEY_PRO1 || "";
 const KEY_PRO9 = import.meta.env.VITE_GOOGLE_KEY_PRO9 || "";
 
