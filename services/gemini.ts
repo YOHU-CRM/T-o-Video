@@ -42,7 +42,8 @@ export const generateVeoVideo = async ({
   onProgress,
   customApiKey
 }: VeoRequest): Promise<any> => {
-  const apiKey = customApiKey || process.env.API_KEY;
+const KEY_PRO1 = import.meta.env.VITE_GOOGLE_KEY_PRO1 || "";
+const KEY_PRO9 = import.meta.env.VITE_GOOGLE_KEY_PRO9 || "";
   if (!apiKey) throw new Error("API Key missing.");
   
   const ai = new GoogleGenAI({ apiKey });
